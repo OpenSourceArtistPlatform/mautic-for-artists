@@ -1,0 +1,173 @@
+<mjml>
+  <mj-head>
+    <mj-title>{subject}</mj-title>
+    <mj-preview>{subject}</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Ubuntu, Helvetica, Arial, sans-serif" />
+      <mj-text font-size="15px" line-height="1.6" color="#334155" />
+      <mj-button font-size="16px" font-weight="700" border-radius="6px" inner-padding="14px 32px" />
+    </mj-attributes>
+    <mj-style>
+      a { color: inherit; text-decoration: underline; }
+      .preheader-link a { color: #64748b; }
+      .hero-heading a, .hero-text a { color: #ffffff; text-decoration: none; }
+      .footer-link a { color: #94a3b8; text-decoration: underline; }
+      .social-link a { color: #334155; text-decoration: none; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f4f4f7">
+
+    <!-- Pre-header -->
+    <mj-section background-color="#f4f4f7" padding="10px 25px">
+      <mj-column>
+        <mj-text font-size="12px" color="#64748b" align="center" css-class="preheader-link">
+          {subject} &mdash; <a href="{webview_url}">View in browser</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Logo Header -->
+    <mj-section background-color="#ffffff" padding="24px 25px 16px 25px">
+      <mj-column>
+        <mj-image src="{{LOGO_URL}}" alt="Logo" width="160px" align="center" padding="0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Hero Banner -->
+    <mj-section background-color="{{BRAND_COLOR}}" padding="48px 25px 40px 25px" border-radius="0">
+      <mj-column width="100%">
+        <mj-text font-size="28px" font-weight="700" color="#ffffff" align="center" padding-bottom="12px" css-class="hero-heading">
+          Live in Concert
+        </mj-text>
+        <mj-text font-size="18px" color="#ffffff" align="center" padding-bottom="6px" css-class="hero-text">
+          Saturday, March 15, 2026 &bull; Doors at 7:00 PM
+        </mj-text>
+        <mj-text font-size="16px" color="#ffffff" align="center" css-class="hero-text">
+          The Venue &bull; 123 Music Row, Your City
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Event Image -->
+    <mj-section background-color="#ffffff" padding="0">
+      <mj-column>
+        <mj-image src="https://via.placeholder.com/600x300/e2e8f0/64748b?text=Show+Photo" alt="Show photo" width="600px" padding="0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Event Description -->
+    <mj-section background-color="#ffffff" padding="32px 25px 16px 25px">
+      <mj-column>
+        <mj-text font-size="22px" font-weight="700" color="#1e293b" padding-bottom="12px">
+          About This Show
+        </mj-text>
+        <mj-text>
+          Don't miss this unforgettable night of live music! Join us for an evening of original songs, fan favorites, and maybe a few surprises. Whether you've been a fan from the beginning or just discovered the music, this is a night you won't want to miss.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider -->
+    <mj-section background-color="#ffffff" padding="0 25px">
+      <mj-column>
+        <mj-divider border-color="{{BRAND_COLOR}}" border-width="2px" padding="8px 0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- 3-Column Details Grid -->
+    <mj-section background-color="#ffffff" padding="24px 25px 32px 25px">
+      <mj-column width="33.33%">
+        <mj-text font-size="13px" font-weight="700" color="#64748b" text-transform="uppercase" letter-spacing="1px" padding-bottom="6px" align="center">
+          Date &amp; Time
+        </mj-text>
+        <mj-text font-size="15px" color="#1e293b" align="center">
+          Saturday, March 15, 2026<br/>Doors 7:00 PM &bull; Show 8:00 PM
+        </mj-text>
+      </mj-column>
+      <mj-column width="33.33%">
+        <mj-text font-size="13px" font-weight="700" color="#64748b" text-transform="uppercase" letter-spacing="1px" padding-bottom="6px" align="center">
+          Venue
+        </mj-text>
+        <mj-text font-size="15px" color="#1e293b" align="center">
+          The Venue<br/>Main Stage
+        </mj-text>
+      </mj-column>
+      <mj-column width="33.33%">
+        <mj-text font-size="13px" font-weight="700" color="#64748b" text-transform="uppercase" letter-spacing="1px" padding-bottom="6px" align="center">
+          Location
+        </mj-text>
+        <mj-text font-size="15px" color="#1e293b" align="center">
+          123 Music Row<br/>Your City, ST 00000
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Get Tickets CTA -->
+    <mj-section background-color="#ffffff" padding="0 25px 40px 25px">
+      <mj-column>
+        <mj-button background-color="{{BRAND_COLOR}}" color="#ffffff" href="#" align="center">
+          Get Tickets
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- What to Expect -->
+    <mj-section background-color="#f8fafc" padding="36px 25px 28px 25px">
+      <mj-column>
+        <mj-text font-size="22px" font-weight="700" color="#1e293b" padding-bottom="16px">
+          What to Expect
+        </mj-text>
+        <mj-text padding-bottom="8px">
+          &#9654; <strong>Full live band performance</strong> &mdash; Songs from the latest album plus deep cuts and fan favorites.
+        </mj-text>
+        <mj-text padding-bottom="8px">
+          &#9654; <strong>Opening act</strong> &mdash; Special guest opener to kick off the night.
+        </mj-text>
+        <mj-text padding-bottom="8px">
+          &#9654; <strong>Merch table</strong> &mdash; Exclusive show-only merch and signed items available.
+        </mj-text>
+        <mj-text padding-bottom="8px">
+          &#9654; <strong>Meet &amp; greet</strong> &mdash; VIP ticket holders get early access and a meet &amp; greet.
+        </mj-text>
+        <mj-text>
+          &#9654; <strong>Good vibes guaranteed</strong> &mdash; Great music, great people, an unforgettable night.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider -->
+    <mj-section background-color="#f8fafc" padding="0 25px">
+      <mj-column>
+        <mj-divider border-color="{{BRAND_COLOR}}" border-width="2px" padding="8px 0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Social Share Footer -->
+    <mj-section background-color="#f8fafc" padding="24px 25px 32px 25px">
+      <mj-column>
+        <mj-text font-size="18px" font-weight="700" color="#1e293b" align="center" padding-bottom="12px">
+          Spread the Word
+        </mj-text>
+        <mj-text align="center" font-size="15px" css-class="social-link">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={webview_url}" style="color: {{BRAND_COLOR}}; text-decoration: none; padding: 0 8px;">Facebook</a> &bull;
+          <a href="https://twitter.com/intent/tweet?url={webview_url}&text={subject}" style="color: {{BRAND_COLOR}}; text-decoration: none; padding: 0 8px;">Twitter</a> &bull;
+          <a href="mailto:?subject={subject}&body={webview_url}" style="color: {{BRAND_COLOR}}; text-decoration: none; padding: 0 8px;">Email a Friend</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Dark Footer -->
+    <mj-section background-color="#1e293b" padding="32px 25px">
+      <mj-column>
+        <mj-text font-size="13px" color="#94a3b8" align="center" padding-bottom="8px" css-class="footer-link">
+          You're receiving this because you joined the fan list.
+        </mj-text>
+        <mj-text font-size="13px" color="#94a3b8" align="center" css-class="footer-link">
+          {unsubscribe_text}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>

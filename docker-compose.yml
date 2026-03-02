@@ -1,0 +1,120 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-mautic}
+      MYSQL_USER: ${MYSQL_USER:-mautic}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - mautic_net
+
+  mautic_web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${MAUTIC_PORT:-8080}:80"
+    environment:
+      MAUTIC_DB_HOST: db
+      MAUTIC_DB_PORT: 3306
+      MAUTIC_DB_NAME: ${MYSQL_DATABASE:-mautic}
+      MAUTIC_DB_USER: ${MYSQL_USER:-mautic}
+      MAUTIC_DB_PASSWORD: ${MYSQL_PASSWORD}
+      MAUTIC_ADMIN_EMAIL: ${MAUTIC_ADMIN_EMAIL}
+      MAUTIC_ADMIN_PASSWORD: ${MAUTIC_ADMIN_PASSWORD}
+      MAUTIC_ADMIN_USERNAME: ${MAUTIC_ADMIN_USERNAME:-admin}
+      MAUTIC_URL: ${MAUTIC_URL:-http://localhost:8080}
+      MAUTIC_MAILER_DSN: ${MAUTIC_MAILER_DSN:-null://null}
+      ARTIST_NAME: ${ARTIST_NAME:-My Artist}
+      ARTIST_BRAND_COLOR: ${ARTIST_BRAND_COLOR:-#6C63FF}
+      ARTIST_LOGO_URL: ${ARTIST_LOGO_URL:-/media/images/placeholder-logo.png}
+      ARTIST_DOMAIN: ${ARTIST_DOMAIN:-localhost}
+    volumes:
+      - mautic_config:/var/www/html/config
+      - mautic_logs:/var/www/html/var/logs
+      - mautic_media:/var/www/html/media
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - mautic_net
+
+  mautic_cron:
+    build: .
+    restart: unless-stopped
+    entrypoint: /bin/bash
+    command: >
+      -c 'while true; do
+        php /var/www/html/bin/console mautic:segments:update --no-interaction 2>&1;
+        php /var/www/html/bin/console mautic:campaigns:trigger --no-interaction 2>&1;
+        php /var/www/html/bin/console mautic:campaigns:rebuild --no-interaction 2>&1;
+        php /var/www/html/bin/console mautic:emails:send --no-interaction 2>&1;
+        php /var/www/html/bin/console mautic:import --no-interaction 2>&1;
+        php /var/www/html/bin/console mautic:broadcasts:send --no-interaction 2>&1;
+        php /var/www/html/bin/console mautic:messages:send --no-interaction 2>&1;
+        php /var/www/html/bin/console mautic:webhooks:process --no-interaction 2>&1;
+        sleep 60;
+      done'
+    environment:
+      MAUTIC_DB_HOST: db
+      MAUTIC_DB_PORT: 3306
+      MAUTIC_DB_NAME: ${MYSQL_DATABASE:-mautic}
+      MAUTIC_DB_USER: ${MYSQL_USER:-mautic}
+      MAUTIC_DB_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mautic_config:/var/www/html/config
+      - mautic_logs:/var/www/html/var/logs
+      - mautic_media:/var/www/html/media
+    depends_on:
+      db:
+        condition: service_healthy
+      mautic_web:
+        condition: service_started
+    networks:
+      - mautic_net
+
+  mautic_worker:
+    build: .
+    restart: unless-stopped
+    entrypoint: /bin/bash
+    command: >
+      -c 'php /var/www/html/bin/console messenger:consume email hits --time-limit=300 --no-interaction 2>&1;
+      exec /bin/bash -c "while true; do
+        php /var/www/html/bin/console messenger:consume email hits --time-limit=300 --no-interaction 2>&1;
+        sleep 5;
+      done"'
+    environment:
+      MAUTIC_DB_HOST: db
+      MAUTIC_DB_PORT: 3306
+      MAUTIC_DB_NAME: ${MYSQL_DATABASE:-mautic}
+      MAUTIC_DB_USER: ${MYSQL_USER:-mautic}
+      MAUTIC_DB_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mautic_config:/var/www/html/config
+      - mautic_logs:/var/www/html/var/logs
+      - mautic_media:/var/www/html/media
+    depends_on:
+      db:
+        condition: service_healthy
+      mautic_web:
+        condition: service_started
+    networks:
+      - mautic_net
+
+volumes:
+  mysql_data:
+  mautic_config:
+  mautic_logs:
+  mautic_media:
+
+networks:
+  mautic_net:

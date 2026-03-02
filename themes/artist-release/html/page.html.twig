@@ -1,0 +1,107 @@
+{% extends "@themes/"~template~"/html/base.html.twig" %}
+{% block content %}
+<!-- Hero Section: Album Art -->
+<section data-section-wrapper="1" class="hero" style="background-color: #0f172a;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="hero-content">
+          <img class="album-art" src="https://via.placeholder.com/400x400/1e293b/94a3b8?text=Album+Art" alt="Album artwork">
+          <div class="hero-text">
+            <p class="tag" style="color: {{BRAND_COLOR}};">New Release</p>
+            <h1>Album / Single Title</h1>
+            <p class="artist-name">Artist Name</p>
+            <p class="release-date">Out Now</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Streaming Platforms Section -->
+<section data-section-wrapper="1" class="streaming" style="background-color: {{BRAND_COLOR}};">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <h2>Listen Now</h2>
+        <div class="platform-buttons">
+          <a href="#" class="platform-btn">Spotify</a>
+          <a href="#" class="platform-btn">Apple Music</a>
+          <a href="#" class="platform-btn">YouTube Music</a>
+          <a href="#" class="platform-btn">Amazon Music</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About the Release -->
+<section data-section-wrapper="1" class="about-release" style="background-color: #ffffff;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="about-content">
+          <h2>About This Release</h2>
+          <p>Share the story behind the music. What inspired it, how it was made, and what it means to you. This is your chance to connect with fans on a deeper level and give them a reason to listen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Signup Form Section -->
+<section data-section-wrapper="1" class="form-section" style="background-color: #f8fafc;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="form-container">
+          <h2>Stay in the Loop</h2>
+          <p>Sign up to get notified about future releases, tour dates, and exclusive content.</p>
+          <div class="form-wrapper">
+            <!-- PLACE MAUTIC FORM HERE -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pre-save CTA -->
+<section data-section-wrapper="1" class="presave" style="background-color: #0f172a;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="presave-content">
+          <h2>Share the Music</h2>
+          <p>Know someone who'd love this? Spread the word.</p>
+          <div class="share-buttons">
+            <a href="#" class="share-btn">Share on Twitter</a>
+            <a href="#" class="share-btn">Share on Facebook</a>
+            <a href="#" class="share-btn">Copy Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer data-section-wrapper="1" style="background-color: #0f172a; border-top: 1px solid #1e293b;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="footer-content">
+          <img class="footer-logo" src="{{LOGO_URL}}" alt="Logo">
+          <p class="footer-links">
+            <a href="#">Spotify</a> &bull;
+            <a href="#">Instagram</a> &bull;
+            <a href="#">YouTube</a> &bull;
+            <a href="#">TikTok</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}

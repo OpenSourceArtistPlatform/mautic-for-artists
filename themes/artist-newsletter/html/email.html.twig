@@ -1,0 +1,145 @@
+{% extends "@themes/"~template~"/html/base.html.twig" %}
+
+{% block content %}
+<mjml>
+  <mj-head>
+    <mj-font name="Ubuntu" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Ubuntu, Helvetica, Arial, sans-serif" />
+      <mj-text font-size="15px" line-height="1.6" color="#333333" />
+      <mj-button font-size="15px" font-weight="500" inner-padding="12px 30px" />
+    </mj-attributes>
+    <mj-style>
+      a { color: {{BRAND_COLOR}}; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .preheader { display: none !important; visibility: hidden; mso-hide: all; font-size: 1px; line-height: 1px; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f4f4f7" width="640px">
+
+    <!-- Pre-header -->
+    <mj-section padding="0">
+      <mj-column>
+        <mj-text css-class="preheader">{subject}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#f4f4f7" padding="10px 25px">
+      <mj-column>
+        <mj-text font-size="12px" color="#888888" align="center">
+          Not displaying correctly? <a href="{webview_url}" style="color: {{BRAND_COLOR}};">View in browser</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Logo Header -->
+    <mj-section background-color="#ffffff" padding="20px 25px">
+      <mj-column>
+        <mj-image src="{{LOGO_URL}}" alt="Logo" width="180px" align="center" padding="10px 0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider under header -->
+    <mj-section background-color="#ffffff" padding="0 25px">
+      <mj-column>
+        <mj-divider border-color="{{BRAND_COLOR}}" border-width="3px" padding="0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Hero Section -->
+    <mj-section background-color="#ffffff" padding="30px 25px 20px 25px">
+      <mj-column>
+        <mj-text font-size="26px" font-weight="700" color="#222222" align="center" padding-bottom="10px">
+          Hey {contactfield=firstname}, here's what's new
+        </mj-text>
+        <mj-text font-size="16px" color="#666666" align="center" padding-bottom="10px">
+          The latest music, shows, and stories — straight to your inbox.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Featured: Latest Track -->
+    <mj-section background-color="#ffffff" padding="10px 25px 30px 25px">
+      <mj-column>
+        <mj-image src="https://via.placeholder.com/600x280/e8e8e8/999999?text=Latest+Track+Artwork" alt="Latest track artwork" width="600px" border-radius="6px" padding-bottom="15px" />
+        <mj-text font-size="12px" font-weight="500" color="{{BRAND_COLOR}}" text-transform="uppercase" letter-spacing="1px" padding-bottom="6px">
+          Latest Track
+        </mj-text>
+        <mj-text font-size="22px" font-weight="700" color="#222222" padding-bottom="10px">
+          Your New Single Title
+        </mj-text>
+        <mj-text font-size="15px" color="#555555" padding-bottom="20px">
+          A brief description of the latest release. Share the story behind the track, what inspired it, and why your fans should listen. Keep it personal and compelling.
+        </mj-text>
+        <mj-button background-color="{{BRAND_COLOR}}" color="#ffffff" border-radius="5px" href="https://example.com" font-weight="500">
+          Listen Now
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider -->
+    <mj-section background-color="#ffffff" padding="0 40px">
+      <mj-column>
+        <mj-divider border-color="#eeeeee" border-width="1px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- 2-Column Grid: Upcoming Shows + Fan Spotlight -->
+    <mj-section background-color="#ffffff" padding="25px 25px 30px 25px">
+      <mj-column padding="0 10px">
+        <mj-image src="https://via.placeholder.com/280x180/e8e8e8/999999?text=Upcoming+Shows" alt="Upcoming shows" width="280px" border-radius="6px" padding-bottom="12px" />
+        <mj-text font-size="18px" font-weight="700" color="#222222" padding-bottom="8px">
+          Upcoming Shows
+        </mj-text>
+        <mj-text font-size="14px" color="#555555" padding-bottom="12px">
+          Check out where we're playing next. New dates just announced — don't miss your city!
+        </mj-text>
+        <mj-text font-size="14px" font-weight="500">
+          <a href="https://example.com" style="color: {{BRAND_COLOR}};">See all dates &rarr;</a>
+        </mj-text>
+      </mj-column>
+      <mj-column padding="0 10px">
+        <mj-image src="https://via.placeholder.com/280x180/e8e8e8/999999?text=Fan+Spotlight" alt="Fan spotlight" width="280px" border-radius="6px" padding-bottom="12px" />
+        <mj-text font-size="18px" font-weight="700" color="#222222" padding-bottom="8px">
+          Fan Spotlight
+        </mj-text>
+        <mj-text font-size="14px" color="#555555" padding-bottom="12px">
+          Shoutout to our amazing community. See how fans are sharing their love for the music.
+        </mj-text>
+        <mj-text font-size="14px" font-weight="500">
+          <a href="https://example.com" style="color: {{BRAND_COLOR}};">Read more &rarr;</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Social Footer Bar -->
+    <mj-section background-color="{{BRAND_COLOR}}" padding="20px 25px">
+      <mj-column>
+        <mj-text font-size="14px" color="#ffffff" align="center" font-weight="500" padding-bottom="12px">
+          Follow the music
+        </mj-text>
+        <mj-text align="center" font-size="14px" color="#ffffff">
+          <a href="#" style="color: #ffffff; text-decoration: none; padding: 0 8px;">Spotify</a> &bull;
+          <a href="#" style="color: #ffffff; text-decoration: none; padding: 0 8px;">Instagram</a> &bull;
+          <a href="#" style="color: #ffffff; text-decoration: none; padding: 0 8px;">YouTube</a> &bull;
+          <a href="#" style="color: #ffffff; text-decoration: none; padding: 0 8px;">TikTok</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Unsubscribe Footer -->
+    <mj-section background-color="#f4f4f7" padding="25px 25px 35px 25px">
+      <mj-column>
+        <mj-text font-size="12px" color="#999999" align="center" line-height="1.5" padding-bottom="8px">
+          You're receiving this because you joined the fan list.
+        </mj-text>
+        <mj-text font-size="12px" color="#999999" align="center" line-height="1.5">
+          {unsubscribe_text}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
+{% endblock %}

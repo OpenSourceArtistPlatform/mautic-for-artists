@@ -1,0 +1,10 @@
+{% extends "@themes/"~template~"/html/base.html.twig" %}
+
+{% block content %}
+    <div style="max-width: 600px; margin: 40px auto; padding: 20px; font-family: Ubuntu, Helvetica, Arial, sans-serif;">
+        {{ message|raw }}
+        {% if content is defined %}
+        <div>{{ content|raw }}</div>
+        {% endif %}
+    </div>
+{% endblock %}

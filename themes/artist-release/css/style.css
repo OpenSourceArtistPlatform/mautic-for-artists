@@ -1,0 +1,279 @@
+/* Artist Release — Landing Page Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    color: #334155;
+    line-height: 1.6;
+    background-color: #0f172a;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero */
+.hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.album-art {
+    width: 320px;
+    height: 320px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.hero-text .tag {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.hero-text .artist-name {
+    font-size: 20px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.hero-text .release-date {
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* Streaming Section */
+.streaming {
+    padding: 48px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.streaming h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.platform-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.platform-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.platform-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* About Release */
+.about-release {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.about-content p {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* Form Section */
+.form-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.form-container {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.form-container p {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 32px;
+}
+
+.form-wrapper {
+    text-align: left;
+}
+
+/* Pre-save / Share Section */
+.presave {
+    padding: 60px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.presave-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.presave h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.presave p {
+    font-size: 16px;
+    color: #94a3b8;
+    margin-bottom: 24px;
+}
+
+.share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.share-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid #334155;
+    transition: border-color 0.2s;
+}
+
+.share-btn:hover {
+    border-color: #64748b;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: block;
+    margin: 0 auto 16px;
+    max-width: 120px;
+    height: auto;
+    opacity: 0.6;
+}
+
+.footer-links {
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #64748b;
+    text-decoration: none;
+    padding: 0 4px;
+}
+
+.footer-links a:hover {
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .hero {
+        padding: 60px 0 40px;
+    }
+
+    .album-art {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .platform-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .platform-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .share-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}

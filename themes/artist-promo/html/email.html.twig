@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>{subject}</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:AllowPNG/>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style type="text/css">
+        /* Reset */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
+        a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+
+        /* Typography */
+        body, td, th, p, li {
+            font-family: Ubuntu, Helvetica, Arial, sans-serif;
+        }
+
+        /* Responsive */
+        @media only screen and (max-width: 620px) {
+            .email-container { width: 100% !important; }
+            .fluid { max-width: 100% !important; height: auto !important; }
+            .stack-column { display: block !important; width: 100% !important; }
+            .stack-column-center { text-align: center !important; }
+            .center-on-narrow { text-align: center !important; display: block !important; margin-left: auto !important; margin-right: auto !important; float: none !important; }
+            table.center-on-narrow { display: inline-block !important; }
+            .email-container td { padding-left: 16px !important; padding-right: 16px !important; }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f7; font-family: Ubuntu, Helvetica, Arial, sans-serif;">
+
+    <!-- Pre-header (hidden text for inbox preview) -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
+        {subject}
+    </div>
+
+    <!-- Full-width wrapper -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f4f4f7;">
+    <tr>
+    <td align="center" valign="top" style="padding: 20px 0;">
+
+        <!-- Web View Link -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="margin: 0 auto;">
+            <tr>
+                <td align="center" style="padding: 8px 20px; font-size: 12px; line-height: 18px; color: #6b7280;">
+                    Not displaying correctly? <a href="{webview_url}" style="color: #6b7280; text-decoration: underline;">View in your browser</a>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Email Body -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+
+            <!-- ====== LOGO HEADER ====== -->
+            <tr>
+                <td align="center" style="padding: 30px 40px 10px 40px; background-color: #ffffff;">
+                    <img src="{{LOGO_URL}}" alt="Logo" width="180" style="display: block; width: 180px; max-width: 180px; height: auto;">
+                </td>
+            </tr>
+
+            <!-- ====== BRAND DIVIDER ====== -->
+            <tr>
+                <td align="center" style="padding: 0 40px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="80">
+                        <tr>
+                            <td style="border-top: 3px solid {{BRAND_COLOR}}; font-size: 0; line-height: 0;">&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- ====== TAGLINE ====== -->
+            <tr>
+                <td align="center" style="padding: 16px 40px 0 40px;">
+                    <p style="margin: 0; font-size: 13px; line-height: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{BRAND_COLOR}};">
+                        New Release
+                    </p>
+                </td>
+            </tr>
+
+            <!-- ====== LARGE HEADLINE ====== -->
+            <tr>
+                <td align="center" style="padding: 12px 40px 20px 40px;">
+                    <h1 style="margin: 0; font-size: 30px; line-height: 38px; font-weight: 700; color: #1e293b; font-family: Ubuntu, Helvetica, Arial, sans-serif;">
+                        New Music Is Here
+                    </h1>
+                </td>
+            </tr>
+
+            <!-- ====== HERO IMAGE (Album Art) ====== -->
+            <tr>
+                <td align="center" style="padding: 0;">
+                    <img src="https://via.placeholder.com/600x300/e2e8f0/94a3b8?text=Album+Artwork" alt="Album artwork" width="600" style="display: block; width: 100%; max-width: 600px; height: auto; border: none;" class="fluid">
+                </td>
+            </tr>
+
+            <!-- ====== ACCENT BAR UNDER HERO ====== -->
+            <tr>
+                <td style="background-color: {{BRAND_COLOR}}; height: 4px; font-size: 0; line-height: 0;">&nbsp;</td>
+            </tr>
+
+            <!-- ====== BODY COPY ====== -->
+            <tr>
+                <td style="padding: 32px 40px 16px 40px;">
+                    <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 26px; color: #374151;">
+                        The wait is over. The new single/album is officially out now on all streaming platforms. This one's been a labor of love, and we can't wait for you to hear it.
+                    </p>
+                    <p style="margin: 0 0 16px 0; font-size: 16px; line-height: 26px; color: #374151;">
+                        Stream it, save it, share it with someone who needs to hear it. Every listen means the world.
+                    </p>
+                </td>
+            </tr>
+
+            <!-- ====== STREAMING LINKS ====== -->
+            <tr>
+                <td align="center" style="padding: 8px 40px 16px 40px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td align="center" style="border-radius: 6px; background-color: {{BRAND_COLOR}};">
+                                <a href="#" target="_blank" style="display: inline-block; padding: 16px 40px; font-size: 16px; line-height: 20px; font-weight: 700; font-family: Ubuntu, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 6px; background-color: {{BRAND_COLOR}}; border: 1px solid {{BRAND_COLOR}};">
+                                    Stream Now
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- ====== PLATFORM LINKS ====== -->
+            <tr>
+                <td align="center" style="padding: 0 40px 32px 40px;">
+                    <p style="margin: 0; font-size: 14px; line-height: 24px; color: #6b7280;">
+                        <a href="#" style="color: {{BRAND_COLOR}}; text-decoration: none; font-weight: 500;">Spotify</a> &nbsp;&bull;&nbsp;
+                        <a href="#" style="color: {{BRAND_COLOR}}; text-decoration: none; font-weight: 500;">Apple Music</a> &nbsp;&bull;&nbsp;
+                        <a href="#" style="color: {{BRAND_COLOR}}; text-decoration: none; font-weight: 500;">YouTube Music</a> &nbsp;&bull;&nbsp;
+                        <a href="#" style="color: {{BRAND_COLOR}}; text-decoration: none; font-weight: 500;">Amazon Music</a>
+                    </p>
+                </td>
+            </tr>
+
+            <!-- ====== SECTION DIVIDER ====== -->
+            <tr>
+                <td style="padding: 0 40px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="border-top: 2px solid {{BRAND_COLOR}}; font-size: 0; line-height: 0; opacity: 0.25;">&nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <!-- ====== SECONDARY SECTION: Upcoming Shows ====== -->
+            <tr>
+                <td style="padding: 32px 40px 16px 40px; background-color: #f9fafb;">
+                    <h2 style="margin: 0 0 12px 0; font-size: 22px; line-height: 28px; font-weight: 700; color: #1e293b; font-family: Ubuntu, Helvetica, Arial, sans-serif;">
+                        Hear It Live
+                    </h2>
+                    <p style="margin: 0 0 20px 0; font-size: 15px; line-height: 24px; color: #4b5563;">
+                        Catch the new music live on tour. Nothing beats hearing it in person with fellow fans. Check out upcoming dates and grab your tickets before they're gone.
+                    </p>
+                </td>
+            </tr>
+
+            <!-- ====== SECONDARY CTA BUTTON ====== -->
+            <tr>
+                <td align="center" style="padding: 0 40px 36px 40px; background-color: #f9fafb;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td align="center" style="border-radius: 6px; background-color: {{BRAND_COLOR}};">
+                                <a href="#" target="_blank" style="display: inline-block; padding: 14px 32px; font-size: 15px; line-height: 18px; font-weight: 700; font-family: Ubuntu, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 6px; background-color: {{BRAND_COLOR}}; border: 1px solid {{BRAND_COLOR}};">
+                                    View Tour Dates
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+        <!-- End Email Body -->
+
+        <!-- ====== DARK FOOTER ====== -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="email-container" style="margin: 0 auto;">
+            <tr>
+                <td style="padding: 28px 40px; background-color: #1e293b; border-radius: 0 0 8px 8px;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td align="center" style="padding-bottom: 12px;">
+                                <p style="margin: 0; font-size: 13px; line-height: 20px; color: #94a3b8; font-family: Ubuntu, Helvetica, Arial, sans-serif;">
+                                    You're receiving this because you joined the fan list.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <p style="margin: 0; font-size: 13px; line-height: 20px; color: #94a3b8; font-family: Ubuntu, Helvetica, Arial, sans-serif;">
+                                    {unsubscribe_text}
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <!-- End Dark Footer -->
+
+    </td>
+    </tr>
+    </table>
+    <!-- End Full-width Wrapper -->
+
+</body>
+</html>

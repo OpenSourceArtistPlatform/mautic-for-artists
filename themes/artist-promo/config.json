@@ -1,0 +1,7 @@
+{
+  "name": "Artist Promo",
+  "author": "Mautic for Artists",
+  "authorUrl": "https://github.com/opensourceartist/mautic-for-artists",
+  "builder": ["grapesjsbuilder"],
+  "features": ["email"]
+}

@@ -1,0 +1,86 @@
+{% extends "@themes/"~template~"/html/base.html.twig" %}
+{% block content %}
+<!-- Hero Section -->
+<section data-section-wrapper="1" class="hero" style="background-color: {{BRAND_COLOR}};">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="hero-content">
+          <img class="logo" src="{{LOGO_URL}}" alt="Logo">
+          <h1>Join the Inner Circle</h1>
+          <p class="subtitle">Get exclusive updates, early ticket access, and behind-the-scenes content delivered straight to your inbox.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Signup Form Section -->
+<section data-section-wrapper="1" class="form-section" style="background-color: #ffffff;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="form-container">
+          <h2>Sign Up for Updates</h2>
+          <p>Drop your email below and you're in. No spam, just music.</p>
+          <div class="form-wrapper">
+            <!-- PLACE MAUTIC FORM HERE -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section data-section-wrapper="1" class="benefits" style="background-color: #f8fafc;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <h2>What You'll Get</h2>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-icon">&#127925;</div>
+            <h3>New Music First</h3>
+            <p>Hear new releases before they hit streaming platforms.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">&#127903;</div>
+            <h3>Early Ticket Access</h3>
+            <p>Presale codes and first dibs on tickets to every show.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">&#127909;</div>
+            <h3>Behind the Scenes</h3>
+            <p>Studio sessions, stories, and content you won't find anywhere else.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">&#127873;</div>
+            <h3>Exclusive Merch</h3>
+            <p>Special drops, limited editions, and fan-only discounts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer data-section-wrapper="1" style="background-color: #1e293b;">
+  <div data-section="1">
+    <div class="container" data-slot-container="1">
+      <div data-slot="text">
+        <div class="footer-content">
+          <p class="footer-text">We respect your privacy. Unsubscribe anytime.</p>
+          <p class="footer-links">
+            <a href="#">Spotify</a> &bull;
+            <a href="#">Instagram</a> &bull;
+            <a href="#">YouTube</a> &bull;
+            <a href="#">TikTok</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
