@@ -78,25 +78,13 @@ ALL_FANS_RESPONSE=$(api_post "/segments/new" -d '{
 ALL_FANS_ID=$(echo "$ALL_FANS_RESPONSE" | grep -o '"id":[0-9]*' | head -1 | grep -o '[0-9]*')
 echo "[seed-mautic] Created segment: All Fans (ID: ${ALL_FANS_ID})"
 
-# Engaged Fans — fans who have read 3+ emails
+# Engaged Fans — fans who have read 3+ emails (filter to be configured in UI)
 api_post "/segments/new" -d '{
     "name": "Engaged Fans",
     "alias": "engaged-fans",
-    "description": "Fans who have opened 3 or more emails",
+    "description": "Fans who have opened 3 or more emails — add a filter in the Mautic UI to track engagement",
     "isPublished": true,
-    "isGlobal": true,
-    "filters": [
-        {
-            "glue": "and",
-            "field": "read_count",
-            "object": "lead",
-            "type": "number",
-            "operator": "gte",
-            "properties": {
-                "filter": 3
-            }
-        }
-    ]
+    "isGlobal": true
 }' > /dev/null 2>&1 || true
 echo "[seed-mautic] Created segment: Engaged Fans"
 
