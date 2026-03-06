@@ -37,6 +37,19 @@ api_get() {
         -H "Content-Type: application/json"
 }
 
+THEME_DIR="/var/www/html/docroot/themes"
+
+# Helper: read a theme's email.html.twig and JSON-escape it
+theme_html() {
+    local theme="$1"
+    local file="${THEME_DIR}/${theme}/html/email.html.twig"
+    if [ -f "$file" ]; then
+        python3 -c "import json,sys; print(json.dumps(open(sys.argv[1]).read()))" "$file"
+    else
+        echo 'null'
+    fi
+}
+
 echo "[seed-mautic] Starting Mautic seeding for '${ARTIST_NAME}'..."
 
 # =============================================================================
@@ -116,6 +129,7 @@ echo "[seed-mautic] Created segment: New Subscribers"
 echo "[seed-mautic] Creating email templates..."
 
 # Welcome email
+WELCOME_HTML=$(theme_html "artist-welcome")
 WELCOME_RESPONSE=$(api_post "/emails/new" -d "{
     \"name\": \"Welcome to the Family\",
     \"subject\": \"Welcome to ${ARTIST_NAME}'s inner circle!\",
@@ -123,12 +137,13 @@ WELCOME_RESPONSE=$(api_post "/emails/new" -d "{
     \"emailType\": \"template\",
     \"template\": \"artist-welcome\",
     \"isPublished\": false,
-    \"customHtml\": null
+    \"customHtml\": ${WELCOME_HTML}
 }")
 WELCOME_ID=$(echo "$WELCOME_RESPONSE" | grep -o '"id":[0-9]*' | head -1 | grep -o '[0-9]*')
 echo "[seed-mautic] Created email: Welcome to the Family (ID: ${WELCOME_ID})"
 
 # New Release email
+RELEASE_HTML=$(theme_html "artist-promo")
 api_post "/emails/new" -d "{
     \"name\": \"New Release\",
     \"subject\": \"New music from ${ARTIST_NAME} — out now!\",
@@ -136,11 +151,12 @@ api_post "/emails/new" -d "{
     \"emailType\": \"template\",
     \"template\": \"artist-promo\",
     \"isPublished\": false,
-    \"customHtml\": null
+    \"customHtml\": ${RELEASE_HTML}
 }" > /dev/null 2>&1 || true
 echo "[seed-mautic] Created email: New Release"
 
 # Show Announcement email
+SHOW_HTML=$(theme_html "artist-event")
 api_post "/emails/new" -d "{
     \"name\": \"Show Announcement\",
     \"subject\": \"${ARTIST_NAME} is coming to your city!\",
@@ -148,11 +164,12 @@ api_post "/emails/new" -d "{
     \"emailType\": \"template\",
     \"template\": \"artist-event\",
     \"isPublished\": false,
-    \"customHtml\": null
+    \"customHtml\": ${SHOW_HTML}
 }" > /dev/null 2>&1 || true
 echo "[seed-mautic] Created email: Show Announcement"
 
 # Fan Update email
+UPDATE_HTML=$(theme_html "artist-newsletter")
 api_post "/emails/new" -d "{
     \"name\": \"Fan Update\",
     \"subject\": \"What's new with ${ARTIST_NAME}\",
@@ -160,7 +177,7 @@ api_post "/emails/new" -d "{
     \"emailType\": \"template\",
     \"template\": \"artist-newsletter\",
     \"isPublished\": false,
-    \"customHtml\": null
+    \"customHtml\": ${UPDATE_HTML}
 }" > /dev/null 2>&1 || true
 echo "[seed-mautic] Created email: Fan Update"
 
