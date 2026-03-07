@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Mautic for Artists — Admin CSS Overrides
+   Brand color placeholder {{BRAND_COLOR}} is replaced at container startup
+   ========================================================================== */
+
+/* --- Mautic "M" Logo SVG Recolor --- */
+.mautic-logo-figure .circle,
+.mautic-logo-figure .m,
+.mautic-logo-figure .m-arrow {
+    fill: {{BRAND_COLOR}};
+}
+
+/* --- Primary Buttons --- */
+.btn-primary {
+    background-color: {{BRAND_COLOR}};
+    border-color: {{BRAND_COLOR}};
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: {{BRAND_COLOR}};
+    border-color: {{BRAND_COLOR}};
+    filter: brightness(0.9);
+}
+
+/* --- Links --- */
+a:hover,
+a:focus {
+    color: {{BRAND_COLOR}};
+}
+
+/* --- Sidebar Active Item Accent --- */
+.sidebar-left-dark .nav-sidebar > li.active > a {
+    border-left-color: {{BRAND_COLOR}};
+}
+
+.sidebar-left-dark .nav-sidebar > li.active > a:hover {
+    border-left-color: {{BRAND_COLOR}};
+}
+
+/* --- Login Page — hide stock Mautic logo, show artist logo --- */
+.panel .mautic-logo {
+    background-image: url('{{LOGO_URL}}');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.panel .mautic-logo svg {
+    display: none;
+}
+
+/* --- Top Navbar Brand Color Accent --- */
+.navbar-default {
+    border-bottom-color: {{BRAND_COLOR}};
+}
+
+/* --- Dropdown Active Items --- */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    background-color: {{BRAND_COLOR}};
+}
+
+/* --- Progress Bars --- */
+.progress-bar {
+    background-color: {{BRAND_COLOR}};
+}

@@ -43,7 +43,21 @@ for theme_dir in /var/www/html/docroot/themes/artist-*/; do
     fi
 done
 
+# Brand system theme overrides (login page, navbar, head)
+echo "[artist-entrypoint] Branding system theme overrides..."
+find /var/www/html/docroot/themes/system/ -name "*.twig" -exec \
+    sed -i "s|{{BRAND_COLOR}}|${BRAND_COLOR}|g; s|{{LOGO_URL}}|${LOGO_URL}|g" {} \;
+
+# Brand MauticArtistBundle plugin assets
+echo "[artist-entrypoint] Branding plugin assets..."
+find /var/www/html/docroot/plugins/MauticArtistBundle/Assets/ -name "*.css" -exec \
+    sed -i "s|{{BRAND_COLOR}}|${BRAND_COLOR}|g; s|{{LOGO_URL}}|${LOGO_URL}|g" {} \;
+
 echo "[artist-entrypoint] Theme branding complete"
+
+# --- Clear plugin cache to discover MauticArtistBundle ---
+echo "[artist-entrypoint] Clearing cache for plugin discovery..."
+su -s /bin/bash www-data -c "php /var/www/html/bin/console cache:clear --no-warmup" 2>/dev/null || true
 
 # --- Step 2: Install Mautic if not yet installed ---
 # The official entrypoint checks local.php for site_url to decide if installed.
