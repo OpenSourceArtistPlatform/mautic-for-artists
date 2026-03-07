@@ -14,15 +14,17 @@ Log into Mautic at `http://your-domain:8080/s/login` with the admin credentials 
 
 Take a quick look at the sidebar. These are the sections you'll use most:
 
-- **Contacts** — Your fan list and segments (groups of fans)
+- **Contacts** — Your fan list
+- **Segments** - Your segments (groups of fans)
 - **Campaigns** — Automated sequences that send emails based on triggers
-- **Components** — Emails, forms, and landing pages
+- **Components** — Assets, forms, and landing pages
+- **Channeles** - Emails, marketing messages
 - **Settings** (gear icon) — Configuration and custom fields
 
 Verify that the pre-seeded content is in place:
 
-1. Go to **Components > Emails** — you should see 4 draft templates: Welcome to the Family, New Release, Show Announcement, and Fan Update
-2. Go to **Contacts > Segments** — you should see 3 segments: All Fans, Engaged Fans, and New Subscribers
+1. Go to **Channels > Emails** — you should see 4 draft templates: Welcome to the Family, New Release, Show Announcement, and Fan Update
+2. Go to **Segments** — you should see 3 segments: All Fans, Engaged Fans, and New Subscribers
 3. Go to **Campaigns** — you should see one draft campaign: Welcome New Fans
 
 If any of these are missing, re-run the seed script. See the [Quick Start Guide](quickstart.md) for details.
@@ -37,8 +39,8 @@ The "Welcome to the Family" email is the first thing new fans will receive. Let'
 
 1. Go to **Components > Emails**
 2. Click **Welcome to the Family** to open it
-3. Edit the **Subject** field — something like "Welcome! You're officially in the crew"
-4. Click **Builder** to open the GrapesJS drag-and-drop editor
+3. Click **Edit** to edit the email. Then, you can edit the Subject field, add preheader text, UTM tags, and other attributes.  **Save** all changes.
+4. Click **Builder** to open the GrapesJS drag-and-drop editor and make all changes to the email, including the text, 
 
 In the builder:
 
