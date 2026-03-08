@@ -12,9 +12,14 @@
         </li>
         <!-- brand -->
          <li>
-            <a class="mautic-brand" href="#" style="display: flex; align-items: center; gap: 8px;">
-                <img src="{{LOGO_URL}}" alt="Mautic for Artists" style="height: 28px; width: auto;" />
-                <span style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap;">Mautic for Artists</span>
+            <a class="pa-0" href="{{ path('mautic_dashboard_index') }}">
+                <div class="brand-logo--desktop mautic-brand hidden-xs pl-md pr-lg" style="display: flex; align-items: center; gap: 8px;">
+                    <img src="{{LOGO_URL}}" alt="Mautic for Artists" style="height: 28px; width: auto;" />
+                    <span style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap;">Mautic for Artists</span>
+                </div>
+                <div class="brand-logo--mobile mautic-brand visible-xs pr-sm">
+                    <img src="{{LOGO_URL}}" alt="Mautic for Artists" style="height: 24px; width: auto;" />
+                </div>
             </a>
             <!--/ brand -->
          </li>

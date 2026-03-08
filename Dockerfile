@@ -1,4 +1,4 @@
-FROM mautic/mautic:5-apache
+FROM mautic/mautic:7-apache
 
 LABEL maintainer="Open Source Artist <hello@opensourceartist.com>"
 LABEL description="Mautic for Artists — Pre-configured email marketing for musicians"
